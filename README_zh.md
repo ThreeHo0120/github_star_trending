@@ -36,8 +36,8 @@
 
 ```bash
 # 克隆仓库
-git clone https://gitee.com/ThreeHo/git-hub_-star_-trending.git
-cd git-hub_-star_-trending
+git clone https://gitee.com/ThreeHo/github_star_trending.git
+cd github_star_trending
 
 # 安装依赖
 npm install
