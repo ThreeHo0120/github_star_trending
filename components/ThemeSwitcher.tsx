@@ -3,8 +3,9 @@
 import { useTheme } from "@/lib/theme";
 import type { Theme } from "@/lib/theme";
 import { useLocale } from "@/lib/i18n";
+import type { ReactNode } from "react";
 
-const OPTIONS: { value: Theme; icon: JSX.Element; labelKey: "themeDark" | "themeLight" | "themeSystem" }[] = [
+const OPTIONS: { value: Theme; icon: ReactNode; labelKey: "themeDark" | "themeLight" | "themeSystem" }[] = [
   {
     value: "light",
     labelKey: "themeLight",
