@@ -38,6 +38,9 @@ const dict: Record<Locale, Record<string, string>> = {
     desc: "描述",
     starsGrowth: "增长",
     totalStars: "总 Star",
+    themeDark: "深色",
+    themeLight: "浅色",
+    themeSystem: "跟随系统",
   },
   en: {
     title: "GitHub Star Trending",
@@ -62,6 +65,9 @@ const dict: Record<Locale, Record<string, string>> = {
     desc: "Description",
     starsGrowth: "Growth",
     totalStars: "Total Stars",
+    themeDark: "Dark",
+    themeLight: "Light",
+    themeSystem: "System",
   },
 };
 

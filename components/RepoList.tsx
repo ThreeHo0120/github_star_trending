@@ -50,7 +50,7 @@ export default function RepoList({ repos, loading, error }: RepoListProps) {
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
           </svg>
         </div>
-        <p className="text-sm text-zinc-400">{error}</p>
+        <p className="text-sm text-muted">{error}</p>
       </div>
     );
   }
@@ -58,7 +58,7 @@ export default function RepoList({ repos, loading, error }: RepoListProps) {
   if (repos.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center rounded-2xl glass py-16 text-center">
-        <p className="text-sm text-zinc-400">{t("noResults")}</p>
+        <p className="text-sm text-muted">{t("noResults")}</p>
       </div>
     );
   }
@@ -66,10 +66,11 @@ export default function RepoList({ repos, loading, error }: RepoListProps) {
   return (
     <div className="grid grid-cols-1 gap-3 sm:gap-4 lg:grid-cols-2">
       {repos.map((repo, i) => (
-        <div key={repo.html_url} className="fade-in-up">
+        <div key={repo.html_url} className="fade-in-up h-full">
           <RepoCard repo={repo} rank={i + 1} />
         </div>
       ))}
     </div>
   );
 }
+

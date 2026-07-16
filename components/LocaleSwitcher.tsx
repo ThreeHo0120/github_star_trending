@@ -9,7 +9,7 @@ export default function LocaleSwitcher() {
     <button
       type="button"
       onClick={() => setLocale(locale === "zh" ? "en" : "zh")}
-      className="inline-flex items-center gap-1.5 rounded-full glass px-3 py-1.5 text-xs font-medium text-zinc-300 transition-all duration-300 hover:bg-white/10 hover:text-white sm:text-sm"
+      className="inline-flex items-center gap-1.5 rounded-full glass px-3 py-1.5 text-xs font-medium text-fg transition-all duration-300 hover:bg-surface-hover hover:text-primary sm:text-sm"
       aria-label="Switch language"
     >
       <svg

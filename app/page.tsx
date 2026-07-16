@@ -59,16 +59,30 @@ export default function Home() {
       {/* 渐变背景光晕 */}
       <div className="pointer-events-none fixed inset-0 bg-aurora" />
 
+      {/* 浮动背景光球 */}
+      <div className="orb top-[10%] left-[5%] h-[400px] w-[400px] bg-violet-600/20" />
+      <div
+        className="orb top-[50%] right-[10%] h-[350px] w-[350px] bg-blue-600/15"
+        style={{ animationDelay: "-7s" }}
+      />
+      <div
+        className="orb bottom-[10%] left-[30%] h-[300px] w-[300px] bg-emerald-600/10"
+        style={{ animationDelay: "-14s" }}
+      />
+
+      {/* 噪点纹理 */}
+      <div className="noise-overlay" />
+
       {/* 内容层 */}
       <div className="relative z-10">
         <Header totalCount={totalCount} />
         <main className="mx-auto max-w-6xl px-3 py-4 sm:px-6 sm:py-6">
-          <div className="mb-4 flex justify-center sm:mb-6 sm:justify-start">
+          <div className="mb-4 flex justify-center sm:mb-6">
             <TimeTabs value={range} onChange={setRange} />
           </div>
           <RepoList repos={repos} loading={loading} error={error} />
         </main>
-        <footer className="mx-auto max-w-6xl px-4 py-6 text-center text-xs text-zinc-600 sm:px-6 sm:py-8">
+        <footer className="mx-auto max-w-6xl px-4 py-6 text-center text-xs text-subtle sm:px-6 sm:py-8">
           {t("poweredBy")}
         </footer>
       </div>

@@ -44,8 +44,6 @@ next-env.d.ts
 # OS
 Thumbs.db
 
-# screenshots
-screenshot.png
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies

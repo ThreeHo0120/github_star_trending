@@ -8,30 +8,40 @@ interface TimeTabsProps {
   onChange: (value: TimeRange) => void;
 }
 
+const TABS: { value: TimeRange; labelKey: "daily" | "weekly" | "monthly" }[] = [
+  { value: "daily", labelKey: "daily" },
+  { value: "weekly", labelKey: "weekly" },
+  { value: "monthly", labelKey: "monthly" },
+];
+
 export default function TimeTabs({ value, onChange }: TimeTabsProps) {
   const { t } = useLocale();
 
-  const tabs: { value: TimeRange; label: string }[] = [
-    { value: "daily", label: t("daily") },
-    { value: "weekly", label: t("weekly") },
-    { value: "monthly", label: t("monthly") },
-  ];
+  const activeIndex = TABS.findIndex((tab) => tab.value === value);
 
   return (
-    <div className="inline-flex items-center gap-1 rounded-2xl glass p-1">
-      {tabs.map((tab) => {
+    <div className="relative inline-grid grid-cols-3 rounded-2xl glass p-1">
+      {/* 滑动指示器 */}
+      <div
+        className="absolute inset-y-1 rounded-xl bg-gradient-to-r from-violet-500 to-blue-500 shadow-lg shadow-violet-500/25 transition-transform duration-300 ease-out"
+        style={{
+          width: `calc((100% - 0.5rem) / ${TABS.length})`,
+          transform: `translateX(calc(${activeIndex} * 100%))`,
+          left: "0.25rem",
+        }}
+      />
+
+      {TABS.map((tab) => {
         const active = tab.value === value;
         return (
           <button
             key={tab.value}
             onClick={() => onChange(tab.value)}
-            className={`relative rounded-xl px-4 py-2 text-xs font-medium transition-all duration-300 sm:px-6 sm:py-2.5 sm:text-sm ${
-              active
-                ? "bg-gradient-to-r from-violet-500 to-blue-500 text-white shadow-lg shadow-violet-500/25"
-                : "text-zinc-400 hover:text-zinc-200"
+            className={`relative z-10 rounded-xl px-4 py-2 text-center text-xs font-medium whitespace-nowrap transition-colors duration-300 sm:px-6 sm:py-2.5 sm:text-sm ${
+              active ? "text-white" : "text-muted hover:text-fg"
             }`}
           >
-            {tab.label}
+            {t(tab.labelKey)}
           </button>
         );
       })}

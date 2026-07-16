@@ -4,12 +4,16 @@
 
 [中文文档](./README_zh.md) | **English**
 
+![GitHub Star Trending](./public/screenshot.png)
+
 ## Features
 
 - **Real Star Growth Data** — Scrapes GitHub Trending pages for authentic star growth metrics, not total stars
 - **Time Range Filters** — Switch between Daily, Weekly, and Monthly growth rankings
 - **Top 20 Projects** — Aggregates multiple language-specific trending pages to ensure 20 results
-- **Glassmorphism Dark UI** — Modern dark theme with frosted glass cards, aurora gradient background, and smooth micro-interactions
+- **Glassmorphism UI** — Modern theme with frosted glass cards, aurora gradient background, and smooth micro-interactions
+- **Theme Switcher** — Light / Dark / System mode with `localStorage` persistence and anti-flash script
+- **Card Effects** — Mouse spotlight, border beam animation, Top 3 gold/silver/bronze badges, count-up numbers
 - **Fully Responsive** — Single column on mobile, dual column on desktop
 - **Bilingual** — Chinese / English toggle with `localStorage` persistence
 - **5-Minute Cache** — Server-side in-memory cache to reduce repeated requests
@@ -70,10 +74,12 @@ HTTP_PROXY=http://127.0.0.1:7890
 │   ├── LocaleSwitcher.tsx      # Language toggle button
 │   ├── RepoCard.tsx            # Glassmorphic repo card with growth badge
 │   ├── RepoList.tsx            # Grid layout with shimmer skeleton
+│   ├── ThemeSwitcher.tsx       # Light/Dark/System theme toggle
 │   └── TimeTabs.tsx            # Gradient pill tabs (daily/weekly/monthly)
 ├── lib/
 │   ├── github.ts               # GitHub Trending scraper + multi-language merge
-│   └── i18n.tsx                # React Context i18n (zh/en)
+│   ├── i18n.tsx                # React Context i18n (zh/en)
+│   └── theme.tsx               # Theme provider (dark/light/system)
 └── package.json
 ```
 
